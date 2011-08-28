@@ -85,7 +85,7 @@ $(function(){
 				'</div>'
 			].join( '' );
 			return htmlTag;
-		}
+		};
 
 		// clone content
 		var cloneContent = function( cloneTarget, appendTarget, cloneCount ) {
@@ -93,7 +93,7 @@ $(function(){
 				appendTarget.append( cloneTarget.clone() );
 				cloneCount--;
 			}
-		}
+		};
 
 		// concat array
 		var concatArr = function( arr ) {
@@ -103,7 +103,7 @@ $(function(){
 				result = result.concat( arr[ i ] );
 			}
 			return result;
-		}
+		};
 
 		for ( var i in colorPalettes ) {
 
@@ -143,7 +143,7 @@ $(function(){
 		var index = $( thisObj ).parents( 'table' ).find( 'td' ).index( thisObj );
 		return index;
 
-	}
+	};
 
 	// addCaptionColor
 	var addCaptionColor = function( thisObj, property ){
@@ -152,7 +152,7 @@ $(function(){
 		$( thisObj ).parents( '.color-palette-wrapper' )
 			.find( '.caption span:eq(' + thisIndex + ')' ).css( property );
 
-	}
+	};
 
 	// createMyColorTag
 	var createMyColorTag = function( className, cssProperty, colorName ){
@@ -165,7 +165,7 @@ $(function(){
 		].join( '' );
 		return htmlTag;
 
-	}
+	};
 
 	// this index color
 	var thisIndexColor = function( thisObj ) {
@@ -175,7 +175,7 @@ $(function(){
 		var color = colorPalettes[ currentPalette ].colors[ thisIndex ];
 		return color;
 
-	}
+	};
 
 	//inputのchecked判定
 	var checkInputCheckde = function( inputId ){
@@ -185,7 +185,7 @@ $(function(){
 		}
 		return $( inputId ).is( ':checked' );
 
-	}
+	};
 
 	// ===========================================================
 	// mouse events
