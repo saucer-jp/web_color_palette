@@ -1,0 +1,161 @@
+// common-mixin.scss Document
+
+// ********************
+// style.scss Document
+// author: Tsukasa Obara
+// URL: http://saucer.jp
+// ********************
+
+// ■■■■■■■■■■■■■■■■■■■■
+// var（汎用）
+// ■■■■■■■■■■■■■■■■■■■■
+
+// ■■■■■■■■■■■■■■■■■■■■
+// @mixin（汎用）
+// ■■■■■■■■■■■■■■■■■■■■
+// ********************
+// opacity
+// ********************
+@mixin opacity( $opacity ) {
+	$ie:$opacity*100;
+	opacity:$opacity;// except IE6,7,8
+	filter:alpha(opacity=#{ $ie });// IE6,7
+	-ms-filter:"alpha(opacity=#{ $ie })";// IE8
+}
+// ********************
+// border-radius
+// ********************
+@mixin borderRadius( $topLeft: 4px, $topRight: 4px, $bottomRight: 4px, $bottomLeft: 4px, $pie: false ) {
+	@if $topLeft == $topRight {
+		@if $topLeft == $bottomRight {
+			@if $topLeft == $bottomLeft {
+				border-radius:$topLeft;
+			} @else {
+				@include _borderRadius( $topLeft, $topRight, $bottomRight, $bottomLeft, $pie );
+			}
+		} @else {
+			@include _borderRadius( $topLeft, $topRight, $bottomRight, $bottomLeft, $pie );
+		}
+	} @else {
+		@include _borderRadius( $topLeft, $topRight, $bottomRight, $bottomLeft, $pie );
+	}
+
+	@if $pie { behavior:$piePath; }
+}
+
+@mixin _borderRadius( $topLeft, $topRight, $bottomRight, $bottomLeft, $pie ) {
+	-moz-border-radius-topleft:$topLeft; // firefox
+	-moz-border-radius-topright:$topRight; // firefox
+	-moz-border-radius-bottomright:$bottomRight; // firefox
+	-moz-border-radius-bottomleft:$bottomLeft; // firefox
+	border-top-left-radius:$topLeft; // chrome, safari, opera ie9
+	border-top-right-radius:$topRight; // chrome, safari, opera ie9
+	border-bottom-right-radius:$bottomRight; // chrome, safari, opera ie9
+	border-bottom-left-radius:$bottomLeft; // chrome, safari, opera ie9
+}
+// ********************
+// boxShadow
+// ********************
+@mixin boxShadow( $horizontal, $vertical, $blur, $color, $pie: false ) {
+	-moz-box-shadow:$horizontal $vertical $blur $color; // firefox
+	-webkit-box-shadow:$horizontal $vertical $blur $color; // chrome, safari
+	box-shadow:$horizontal $vertical $blur $color; // opera10.5~
+
+	@if $pie { behavior:$piePath; }
+}
+// ********************
+// linear-gradient
+// ********************
+@mixin linearGradient( $topColor, $bottomColor, $pie: false ) {
+	background:-moz-linear-gradient(top, $topColor, $bottomColor); // FF 3.6+
+	background:-ms-linear-gradient($topColor, $bottomColor); // IE10
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, $topColor), color-stop(100%, $bottomColor)); // Safari 4+, Chrome 2+
+	background:-webkit-linear-gradient($topColor, $bottomColor); // Safari 5.1+ Chrome 10+
+	background:-o-linear-gradient($topColor, $bottomColor); // Opera 11.10
+	background:linear-gradient($topColor, $bottomColor); // the standard
+
+	@if $pie {
+		-pie-background: linear-gradient($topColor, $bottomColor);
+		behavior:$piePath;
+
+		@if $pie == pie-relative {
+			_position:relative; // IE6
+		}
+	}
+}
+// ■■■■■■■■■■■■■■■■■■■■
+// var（個別）
+// ■■■■■■■■■■■■■■■■■■■■
+// imagesフォルダへのパス
+$imagesFolderPath:'../images/';
+// 画像へのパス
+$hogePngPath:'#{$imagesFolderPath}hoge.png';
+// PIE
+$piePath:url(/stylesheets/PIE.htc);
+
+// ■■■■■■■■■■■■■■■■■■■■
+// @mixin（個別）
+// ■■■■■■■■■■■■■■■■■■■■
+// ********************
+// sprites
+// ********************
+@mixin BG_images( $filePath, $repeat :false, $position :false ) {
+	@if $filePath {
+		background-image:url(#{$filePath});
+	}
+	@if $repeat == no {
+		background-repeat:no-repeat;
+	} @else if $repeat == repeat {
+		background-repeat:repeat;
+	}
+	@if $position {
+		background-position:$position;
+	}
+}
+
+// ********************
+// グラデセット
+// ********************
+$gradientSet_padding:0.25em 0.5em;
+
+@mixin gradientSet_black( $border: false, $padding: false, $pie: false ) {
+	@if $border {
+		border-width:1px 0;
+		border-style:solid;
+		border-top-color:#666;
+		border-bottom-color:#000;
+	}
+	@if $padding {
+		padding:$padding;
+	}
+	background:#333;
+	@include linearGradient( #444, #222, $pie );
+}
+
+@mixin gradientSet_gray( $border: false, $padding: false, $pie: false ) {
+	@if $border {
+		border-width:1px 0;
+		border-style:solid;
+		border-top-color:#eee;
+		border-bottom-color:#666;
+	}
+	@if $padding {
+		padding:$padding;
+	}
+	background:#aaa;
+	@include linearGradient( #bbb, #999, $pie );
+}
+
+@mixin gradientSet_white( $border: false, $padding: false, $pie: false ) {
+	@if $border {
+		border-width:1px 0;
+		border-style:solid;
+		border-top-color:#fff;
+		border-bottom-color:#ccc;
+	}
+	@if $padding {
+		padding:$padding;
+	}
+	background:#fff;
+	@include linearGradient( #fcfcfc, #f5f5f5, $pie );
+}

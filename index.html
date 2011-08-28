@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="ja" class="ie6 ie"> <![endif]-->
+<!--[if IE 7 ]> <html lang="ja" class="ie7 ie"> <![endif]-->
+<!--[if IE 8 ]> <html lang="ja" class="ie8 ie"> <![endif]-->
+<!--[if IE 9 ]> <html lang="ja" class="ie9 ie"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="ja"> <!--<![endif]-->
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="" />
+		<title>Web Color Palette</title>
+		<!-- IEの表示モード -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!-- ipad,iphone width 最適化 -->
+		<meta name="viewport" content="width=600" />
+		<!-- html5shiv -->
+		<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<!-- css - Start -->
+		<link href="css/style.css" rel="stylesheet" />
+		<link href='http://fonts.googleapis.com/css?family=Andika|Lobster' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<noscript>
+			<p>JavaScriptをONにしてくださいね</p>
+		</noscript>
+		<div id="container">
+			<header>
+				<h1>Web Color Palette</h1>
+				<span class="address"></span>
+				<div class="option">
+					<input type="checkbox" id="changeBackgroundColor" />
+					<label for="changeBackgroundColor">Change Background Color</label>
+				</div>
+			</header>
+			<div id="contents">
+				<div id="myPalette">
+					<span class="delete">All Delete</span>
+					<h2>My Palette</h2>
+				</div>
+				<div id="colorPalettes"></div>
+			</div>
+			<footer>
+			</footer>
+		</div>
+		<div id="ieContainer">
+			<h1>残念ですが、Web Color PaletteはIE対応しません。</h1>
+		</div>
+		<!-- JavaScript / Jquery -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html>

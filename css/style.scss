@@ -1,0 +1,316 @@
+@import "default"; //default.scssの読み込み
+@import "common-mixin"; //common-mixin.scssの読み込み
+/*!
+ * style.css Document
+ */
+
+// ********************
+// style.scss Document
+// author: Tsukasa Obara
+// URL: http://saucer.jp
+// ********************
+
+// ------------------------------------
+// 分類テンプレート
+
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+// @ 大分類
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+// ■■■■■■■■■■■■■■■■■■■■
+// @ 中分類
+// ■■■■■■■■■■■■■■■■■■■■
+
+// ********************
+// @ 小分類
+// ********************
+
+// 最小
+// ------------------------------------
+
+// ■■■■■■■■■■■■■■■■■■■■
+// @ option class
+// ■■■■■■■■■■■■■■■■■■■■
+.f4{font-size:216.7%;} // 26px
+.f3{font-size:166.7%;} // 20px
+.f2{font-size:133.3%;} // 16px
+.f1{font-size:116.7%;} // 14px
+.f0{font-size:100%;}   // 12px
+.f-1{font-size:91.7%;} // 11px
+.f-2{font-size:83.3%;} // 10px
+.f-3{font-size:75%;} // 9px アンチoff時は可読性無し
+.f-4{font-size:66.7%;} // 8px アンチoff時は可読性無し
+
+.word-break { // IE,safari独自（ただし、css3の仕様にはアリ）
+	word-break:break-all;
+}
+.nowrap {
+	white-space:nowrap;
+}
+.none { // 非表示
+	display:none;
+}
+.ie6none { // IE6用 非表示
+	_display:none; // IE6
+}
+.ie7none { // IE6,7用 非表示
+	*display:none; // IE6,7
+}
+// border
+.border .solid {
+	border-top:1px solid #bbb;
+}
+.border .dashed {
+	border-top:1px dashed #bbb;
+}
+
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+// @@@ 初期設定
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+body {
+	font-family: 'Andika', sans-serif;
+	padding:1em 2em 8em;
+}
+#container {}
+select {
+	-webkit-appearance:menulist-button;
+}
+.webkit select {
+	border-color:#888;
+}
+// ********************
+// @ heading
+// ********************
+// default.cssにてfont-size:100%;font-weight:normal;されています
+h1,h2,h3,h4,h5,h6 {}
+h1 {
+	font-family: 'Lobster', cursive;
+	font-size:2em;
+}
+h2 {
+		padding-left:2px;
+}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+// ********************
+// @ list
+// ********************
+// 全てのliの先頭に画像を指定する場合はmargin-left, list-style-type, padding-left のコメントを外す
+ul,
+ol {
+	margin-left:0;
+}
+li {
+	list-style-type:none;
+	padding-left:0;
+}
+// ********************
+// @ text
+// ********************
+p {}
+span {}
+strong {}
+address {}
+// ********************
+// @ table
+// ********************
+table {
+	width:100%;
+	border-collapse:separate;
+	table-layout:fixed;
+	border-spacing:5px;
+}
+table,
+th,
+td {
+	vertical-align:middle;
+	text-align:center;
+	border:none;
+}
+// ********************
+// @ Anchor
+// ********************
+a,
+address a { // リンク
+	outline:none;
+	text-decoration:none;
+	color:#03c; // 一般的なリンク色
+	color:#05c; // 彩度の低いリンク色
+}
+a:hover,
+address a:hover { // マウスオーバー時
+	text-decoration:underline;
+	color:#00f; // 一般的なリンク色
+	color:#0bf; // 爽やかなリンク色
+}
+a:focus { // tabキーで選択時 except IE6,7 safari
+	text-decoration:underline;
+	color:#000;
+	//background-color:#8cf!important;
+	outline:1px solid #8cf!important;
+	outline-offset:-2px; // except IE
+}
+// ********************
+// @ img
+// ********************
+// <a>内の画像にhover動作追加
+a:hover img {
+	opacity:0.7;// except IE6,7,8
+	filter:alpha(opacity=70);// IE6,7
+	-ms-filter:"alpha(opacity=70)";// IE8
+}
+// ********************
+// @ noscript
+// ********************
+noscript {
+	background:#fff;
+	color:#d00;
+	padding:1em;
+	margin:10px;
+	border:1px solid #d00;
+}
+noscript p {
+	text-align:center;
+}
+
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+// @@@ 個別設定
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+// □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+// @@ layouts
+// □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+#ieContainer {
+	display:none;
+}
+.ie {
+	#container {
+		display:none;
+	}
+	#ieContainer {
+		display:block;
+		h1 {
+			font-family:'メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS UI Gothic',sans-serif;
+		}
+	}
+}
+
+// □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+// @@ common
+// □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+h2+div {
+	margin-bottom:1em;
+}
+
+// □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+// @@ pages
+// □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+// ■■■■■■■■■■■■■■■■■■■■
+// @ header
+// ■■■■■■■■■■■■■■■■■■■■
+header {
+	margin-bottom:0.5em;
+	overflow:hidden;
+	h1 {
+		float:left;
+	}
+	.address {
+		float:left;
+		font-size:0.8em;
+		padding-left:1em;
+		padding-top:1.5em;
+	}
+	.option {
+		float:right;
+		padding-top:1em;
+		label {
+			font-size:0.8em;
+			&:hover {
+				color:#08f;
+			}
+		}
+	}
+}
+// ■■■■■■■■■■■■■■■■■■■■
+// @ contents
+// ■■■■■■■■■■■■■■■■■■■■
+// ********************
+// @ palettes
+// ********************
+.selected-td {}
+// @ caption
+.caption {
+	color:#ccc;
+	font-size:0.9em;
+	span {
+		margin-right:0.5em;
+		display:inline-block;
+	}
+}
+td {
+	color:#fff;
+	padding:0.25em 0;
+	cursor:pointer;
+}
+#colorPalettes {
+	h2 {
+		cursor:pointer;
+		&:hover {
+			color:#08f;
+		}
+	}
+}
+
+// ********************
+// @ my palette
+// ********************
+#myPalette {
+	position:fixed;
+	left:0;
+	bottom:0;
+	width:100%;
+	background-color:#fff;
+	padding:0.5em 2em;
+	border-top:1px dotted #999;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+
+  .selected-color-wrapper,
+	.selected-color,
+	.text {
+		display:inline-block;
+		width:5em;
+		text-align:center;
+	}
+	.text {
+		font-size:0.8em;
+	}
+	.delete {
+		float:right;
+		cursor:pointer;
+		font-size:0.9em;
+		&:hover {
+			color:#08f;
+		}
+	}
+	.hover-color {
+		padding-left:1em;
+	}
+}
+// ■■■■■■■■■■■■■■■■■■■■
+// @ footer
+// ■■■■■■■■■■■■■■■■■■■■
+footer {
+	address {
+		text-align:right;
+		font-size:0.8em;
+		margin-top:2.5em;
+	}
+}
+
+// □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+// @@ Media Query
+// □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+// Media Query ie6〜8 非対応
