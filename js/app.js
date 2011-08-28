@@ -1,8 +1,3 @@
-// ********************
-// app.js Document
-// author: Tsukasa Obara
-// URL: http://saucer.jp
-// ********************
 $(function(){
 
 	// browser is IE!
