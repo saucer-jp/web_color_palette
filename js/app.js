@@ -98,6 +98,11 @@ $(function(){
 
 	};
 
+	var data = {
+		defaultTextColor: '#000',
+		textHoverColor: '#08f'
+	};
+
 	// ===========================================================
 	// init
 	// ===========================================================
@@ -106,8 +111,8 @@ $(function(){
 		// make table
 		var makeTable = function( title, idName, className ) {
 			var htmlTag = [
-				'<h2>', title, '</h2>',
-				'<div id="', idName, '" class="none ', className, '">',
+				'<h2 class="jquery-color">', title, '</h2>',
+				'<div id="', idName, '" class="', className, '">',
 					'<table>',
 						'<tbody>',
 							'<tr>',
@@ -146,7 +151,7 @@ $(function(){
 			if ( colorPalettes[ i ].colors.length == 0 ) continue;
 
 			var title = colorPalettes[ i ].name;
-			var className = 'color-palette-wrapper';
+			var className = 'none color-palette-wrapper';
 			$( '#colorPalettes' ).append( makeTable( title, i, className ) );
 
 			var $tdCloneTarget = $( 'td:first', '#' + i );
@@ -166,6 +171,8 @@ $(function(){
 				$(this).css( 'background-color', colorPalettes[ i ].colors[ e ] );
 				//$( '<span/>' ).text( colorPalettes[ i ].colors[ e ] + ' ' ).appendTo( $caption );
 			});
+
+			data.nowBGColor = $( 'body' ).css( 'background-color' );
 		}
 
 	}());
@@ -244,6 +251,16 @@ $(function(){
 	});
 
 	// ===========================================================
+	// hover events
+	// ===========================================================
+	var $jqueryColor = $( '.jquery-color' );
+	$jqueryColor.hover(function(){
+		$(this).stop( true, true ).animate({ color: data.textHoverColor });
+	}, function(){
+		$(this).stop( true, true ).animate({ color: data.defaultTextColor });
+	});
+
+	// ===========================================================
 	// click events
 	// ===========================================================
 	// palette slide toggle
@@ -259,6 +276,7 @@ $(function(){
 
 		var color = thisIndexColor( this );
 		var cssProperty = 'background-color:' + color ;
+		data.nowBGColor = color ;
 
 		// background color
 		if ( checkInputCheckde( '#changeBackgroundColor' ) ) {
