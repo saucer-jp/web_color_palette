@@ -107,7 +107,7 @@ $(function(){
 		var makeTable = function( title, idName, className ) {
 			var htmlTag = [
 				'<h2>', title, '</h2>',
-				'<div id="', idName, '" class="', className, '">',
+				'<div id="', idName, '" class="none ', className, '">',
 					'<table>',
 						'<tbody>',
 							'<tr>',
