@@ -274,7 +274,7 @@ td {
   .selected-color-wrapper,
 	.selected-color,
 	.text {
-		display:inline-block;
+    float: left;
 		width:5em;
 		text-align:center;
 	}
