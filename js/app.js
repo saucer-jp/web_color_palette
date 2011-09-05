@@ -100,7 +100,10 @@ $(function(){
 
 	var data = {
 		defaultTextColor: '#000',
-		textHoverColor: '#08f'
+		textHoverColor: '#08f',
+		option: {
+			disableHoverAnimation: false
+		}
 	};
 
 	// ===========================================================
@@ -238,8 +241,15 @@ $(function(){
 	$td.mouseover(function(){
 
 		//addCaptionColor( this, { color: '#000' } );
-    var color = thisIndexColor( this );
-    $( '<span/>' ).addClass( 'hover-color' ).text( color ).appendTo( '#myPalette h2' );
+		var color = thisIndexColor( this );
+		$( '<span/>' ).addClass( 'hover-color' ).text( color ).appendTo( '#myPalette h2' );
+
+		// disable hover animation
+		if ( !data.option.disableHoverAnimation ) {
+			$( this ).stop( true, true ).animate({ opacity: '0.5' }, 400, 'swing', function(){
+				$( this ).animate({ opacity: '1' }, 100, 'swing' );
+			});
+		}
 
 	});
 
@@ -268,6 +278,15 @@ $(function(){
 
 		$( this ).next( 'div' ).slideToggle();
 
+	});
+
+	// disable hover animation
+	$( '#disableHoverAnimation' ).click(function(){
+		if ( checkInputCheckde( '#disableHoverAnimation' ) ) {
+			data.option.disableHoverAnimation = true;
+		} else {
+			data.option.disableHoverAnimation = false;
+		}
 	});
 
 	// color control

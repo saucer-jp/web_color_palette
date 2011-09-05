@@ -291,7 +291,8 @@ header {
     float: right;
     padding-top: 1em; }
     header .option label {
-      font-size: 0.8em; }
+      font-size: 0.8em;
+      margin-right: 0.75em; }
 
 .caption {
   color: #ccc;

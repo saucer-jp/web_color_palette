@@ -220,6 +220,7 @@ header {
 		padding-top:1em;
 		label {
 			font-size:0.8em;
+			margin-right:0.75em;
 			//&:hover {
 			//	color:#08f;
 			//}
@@ -274,7 +275,7 @@ td {
   .selected-color-wrapper,
 	.selected-color,
 	.text {
-    float: left;
+		float:left;
 		width:5em;
 		text-align:center;
 	}
