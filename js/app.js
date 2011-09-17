@@ -307,7 +307,6 @@ $(function(){
 
       var thisClass = $( this ).attr( 'class' );
       var myColor = thisClass.match( /myColor\d*/ ).toString();
-      console.log( 'remove' + myColor );
       $( this ).removeClass( thisClass ).html( '&nbsp;' );
       $( '.' + myColor, '#myPalette' ).remove();
 
@@ -316,7 +315,6 @@ $(function(){
 
       myColorCounter++;
       var className = 'myColor' + myColorCounter ;
-      console.log( 'odd' + className);
       $( this ).addClass( 'selected-td myColor' + myColorCounter ).text( '●' );
       $( createMyColorTag( className, cssProperty, color ) ).appendTo( '#sortable' );
 
