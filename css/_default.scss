@@ -23,20 +23,20 @@ blockquote,
 table,thead,tbody,tfoot,tr,th,td,
 a,
 address {
-	margin:0;
-	padding:0;
-	word-break:break-all; // IE,safari独自（ただし、css3の仕様にはアリ）
-	vertical-align:baseline;
-	font-style:normal;
+  margin:0;
+  padding:0;
+  word-break:break-all; // IE,safari独自（ただし、css3の仕様にはアリ）
+  vertical-align:baseline;
+  font-style:normal;
 }
 body {
-	text-align:left;
-	color:#000;
-	font-style:normal;
-	font-weight:normal;
-	letter-spacing:0;
-	background:#fff;
-	text-decoration:none;
+  text-align:left;
+  color:#000;
+  font-style:normal;
+  font-weight:normal;
+  letter-spacing:0;
+  background:#fff;
+  text-decoration:none;
 }
 body,
 pre,
@@ -45,10 +45,10 @@ input,
 select,
 label,
 textarea {
-	font-size:13px;
-	line-height:1.5; // 単位em削除 20100820
-	vertical-align:baseline;
-	margin:0;
+  font-size:13px;
+  line-height:1.5; // 単位em削除 20100820
+  vertical-align:baseline;
+  margin:0;
 }
 body,
 pre,
@@ -57,69 +57,69 @@ input,
 select,
 label,
 textarea {
-	font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS UI Gothic',sans-serif;
+  font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS UI Gothic',sans-serif;
 }
 h1,h2,h3,h4,h5,h6 {
-	font-size:100%;
-	font-weight:normal;
+  font-size:100%;
+  font-weight:normal;
 }
 ul,ol {
-	margin-left:1.3em;
+  margin-left:1.3em;
 }
 li {
-	list-style-image:none;
-	list-style-position:outside;
+  list-style-image:none;
+  list-style-position:outside;
 }
 fieldset,
 img {
-	border-width:0;
-	border-style:none;
+  border-width:0;
+  border-style:none;
 }
 img { // 画像縮小時の最適化
-	-ms-interpolation-mode: bicubic; // IE7~
+  -ms-interpolation-mode: bicubic; // IE7~
 }
 table {
-	border-collapse:collapse;
-	border-spacing:0px; // except IE6,7
-	border:none;
+  border-collapse:collapse;
+  border-spacing:0px; // except IE6,7
+  border:none;
 }
 th {
-	text-align:center; // IE6,7
+  text-align:center; // IE6,7
 }
 th,td {
-	border:1px solid #ccc;
+  border:1px solid #ccc;
 }
 iframe {
-	margin:0;
-	padding:0;
-	border-widht:0;
-	border-style:none;
-	width:100%;
+  margin:0;
+  padding:0;
+  border-widht:0;
+  border-style:none;
+  width:100%;
 }
 div,
 p,
 td {
-	//text-align:justify; // moz, webkit, opera
-	//text-justify:distribute; // IE // css3
-	//-ms-text-justify:distribute; // IE8
+  //text-align:justify; // moz, webkit, opera
+  //text-justify:distribute; // IE // css3
+  //-ms-text-justify:distribute; // IE8
 }
 p,
 td {
-	text-align:justify; // moz, webkit, opera
-	text-justify:distribute; // IE // css3
-	-ms-text-justify:distribute; // IE8
+  text-align:justify; // moz, webkit, opera
+  text-justify:distribute; // IE // css3
+  -ms-text-justify:distribute; // IE8
 }
 input,
 select,
 label,
 button {
-	cursor:pointer;
-	_cursor:auto; // IE6
+  cursor:pointer;
+  _cursor:auto; // IE6
 }
 input[type="text"],
 input[type="email"],
 input[type="password"] { // except IE6
-	cursor:text;
+  cursor:text;
 }
 // ********************
 // @ html5
@@ -139,7 +139,7 @@ hgroup,
 menu,
 nav,
 section {
-	display:block;
+  display:block;
 }
 // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 // IE用 リセット/初期設定
@@ -148,58 +148,58 @@ section {
 // @ IE6
 // ********************
 .ie6 {
-	body {}
-	body,
-	pre,
-	label,
-	select,
-	textarea {
-		font-family:'メイリオ',Meiryo,'MS UI Gothic';
-	}
-	input {
-		line-height:1.0em;
-	}
+  body {}
+  body,
+  pre,
+  label,
+  select,
+  textarea {
+    font-family:'メイリオ',Meiryo,'MS UI Gothic';
+  }
+  input {
+    line-height:1.0em;
+  }
 }
 // ********************
 // @ IE7
 // ********************
 .ie7 {
-	body {}
-	body,
-	pre,
-	label,
-	select,
-	textarea {
-		font-family:'メイリオ',Meiryo,'MS UI Gothic';
-	}
-	.xpie input {
-		line-height:1.0em;
-	}
+  body {}
+  body,
+  pre,
+  label,
+  select,
+  textarea {
+    font-family:'メイリオ',Meiryo,'MS UI Gothic';
+  }
+  .xpie input {
+    line-height:1.0em;
+  }
 }
 // ********************
 // @ IE8
 // ********************
 .ie8 {
-	body {}
-	body,
-	pre,
-	label,
-	select,
-	textarea {
-	}
-	.xpie input {
-		line-height:1.0em;
-	}
+  body {}
+  body,
+  pre,
+  label,
+  select,
+  textarea {
+  }
+  .xpie input {
+    line-height:1.0em;
+  }
 }
 // ********************
 // @ IE9
 // ********************
 .ie9 {
-	body {}
-	body,
-	pre,
-	label,
-	select,
-	textarea {
-	}
+  body {}
+  body,
+  pre,
+  label,
+  select,
+  textarea {
+  }
 }
