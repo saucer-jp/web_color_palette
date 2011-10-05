@@ -319,6 +319,15 @@ $(function(){
       $( createMyColorTag( className, cssProperty, color ) ).appendTo( '#sortable' );
 
     }
+
+    // jquery ui sortable
+    $( '#sortable' ).sortable({
+      items: '.selected-color-wrapper',
+      cursor: 'move',
+      handle: '.selected-color',
+      opacity: 0.5
+    });
+
   });
 
   // my palette all delete
@@ -327,13 +336,6 @@ $(function(){
     $( '.selected-td', '#colorPalettes' ).html( '&nbsp;' ).removeClass( 'selected-td' );
     $( '.selected-color-wrapper', '#myPalette' ).remove();
 
-  });
-
-  $("#sortable").sortable({
-    items: ".selected-color-wrapper",
-    cursor: "move",
-    handle: ".selected-color",
-    opacity: 0.5
   });
 
 });
