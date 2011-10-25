@@ -323,6 +323,7 @@ $(function(){
     // jquery ui sortable
     $( '#sortable' ).sortable({
       items: '.selected-color-wrapper',
+      containment: '#myPalette',
       cursor: 'move',
       handle: '.selected-color',
       opacity: 0.5

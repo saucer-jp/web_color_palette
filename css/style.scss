@@ -266,12 +266,15 @@ td {
   bottom:0;
   width:100%;
   background-color:#fff;
-  padding:0.5em 2em;
+  padding:0.5em 0;
   border-top:1px dotted #999;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 
+  h2 {
+    padding:0 2em;
+  }
   .selected-color-wrapper,
   .selected-color,
   .text {
@@ -292,6 +295,9 @@ td {
   }
   .hover-color {
     padding-left:1em;
+  }
+  #sortable {
+    padding:0 2em;
   }
 }
 // ■■■■■■■■■■■■■■■■■■■■
