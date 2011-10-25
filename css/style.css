@@ -333,7 +333,8 @@ td {
   #myPalette .delete {
     float: right;
     cursor: pointer;
-    font-size: 0.9em; }
+    font-size: 0.9em;
+    margin-right: 2em; }
   #myPalette .hover-color {
     padding-left: 1em; }
   #myPalette #sortable {
